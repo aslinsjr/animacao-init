@@ -1,0 +1,258 @@
+/* Configurações Gerais */
+:root {
+    --primary-color: #684bb6;
+    --text-color: #242424;
+    --background-color: #e4dff3;
+    --font-size-desktop: 16px;
+    --font-size-mobile: 12px;
+    --modal-box-shadow: 0 0 0.5rem 1px #242424;
+    --border-color: #9e85e4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--background-color);
+}
+
+/* Página de Login */
+.label-bg {
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 10vh;
+    z-index: 1;
+}
+
+.modal-bg {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0.1rem);
+    z-index: 2;
+}
+
+.modal {
+    width: 400px;
+    padding-bottom: 5vh;
+    background-color: var(--background-color);
+    z-index: 1;
+    border-radius: 0.5rem;
+    box-shadow: var(--modal-box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+}
+
+.input-control {
+    width: 100%;
+    margin: 0.5rem 0;
+}
+
+.input-control button {
+    width: 100%;
+    font-size: 0.7rem;
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--primary-color);
+    text-align: end;
+}
+
+input {
+    width: 100%;
+    background-color: transparent;
+    border: 1px solid var(--text-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+input:focus {
+    outline: 2px solid var(--border-color);
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+
+input[type="submit"]:focus {
+    outline: none;
+}
+
+#logo-animation {
+    position: absolute;
+    z-index: 0;
+    top: 10vh;
+    left: calc(50% - 250px);
+}
+
+/* Componentes */
+nav {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: fadeIn 1s;
+    padding: 2rem;
+}
+
+nav a {
+    width: 200px;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 5vw;
+}
+
+nav ul li {
+    box-shadow: 7px 7px 0 0 var(--border-color);
+}
+
+nav ul li:hover {
+    box-shadow: 12px 12px 0 0 var(--border-color);
+    transition: 0.1s;
+}
+
+nav ul li button {
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: 1px solid var(--text-color);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: none;
+}
+
+nav ul li button:hover {
+    transform: scale(1.05);
+    transition: 0.1s;
+}
+
+/* Sessões */
+section {
+    width: 90%;
+    min-height: 65vh;
+    background-color: var(--border-color);
+    box-shadow: var(--modal-box-shadow);
+    animation: fadeIn 1.5s;
+}
+
+#dashboard {
+    display: grid;
+    grid-template-columns: repeat(2);
+}
+
+.pet-list {
+    display: grid;
+    grid-template-columns: repeat(2);
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding: 0.5rem;
+    gap: 1rem;
+}
+
+.pet-box {
+    width: 200px;
+    height: fit-content;
+    padding: 0.5rem;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    box-shadow: var(--modal-box-shadow);
+}
+
+.name-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.img-control {
+    width: 30px;
+    height: 30px;
+    padding: 0.5rem;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-control img {
+    width: 20px;
+}
+
+
+/* Efeitos */
+@keyframes closeEffect {
+    from {
+        height: 10vh;
+    }
+
+    to {
+        height: 50vh;
+    }
+}
+
+@keyframes openEffect {
+    from {
+        width: 50vw;
+    }
+
+    to {
+        width: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+    body {
+        font-size: var(--font-size-mobile);
+    }
+}
